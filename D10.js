@@ -43,7 +43,8 @@ console.log(me)
 
 
 /* ESERCIZIO D
-  Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
+  Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto 
+  precedentemente creato.
 */
 
 delete me.age
@@ -51,16 +52,29 @@ delete me.age
 console.log(me)
 
 /* ESERCIZIO E
-  Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
+  Crea del codice per aggiungere programmaticamente all'oggetto precedentemente 
+  creato un array chiamato "skills", contenente i linguaggi di programmazione 
+  che conosci.
 */
+
+me.skills = ["html" , "css" , "javascript"]
+console.log(me)
+
+
 
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
 
+me.skills.push("Java")
+console.log(me)
+
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+
+me.skills.pop()
+console.log(me)
 
 // Funzioni
 
