@@ -137,7 +137,11 @@ console.log(deleteOne(string,false))
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
-function onlyLetters(){}
+function onlyLetters(string6){
+  return string6.replace(/[0-9]/g, '');
+}
+
+console.log(onlyLetters("I have 4 dogs"));
 
 
 
@@ -146,12 +150,22 @@ function onlyLetters(){}
 */
 
 function isThisAnEmail (string2){
-
+    const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return email.test(string2);
 }
+
+console.log(isThisAnEmail("example@example.com")); 
+console.log(isThisAnEmail("invalid_email")); 
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+function whatDayIsIt(){
+  return Date
+}
+
+console.log(whatDayIsIt)
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -166,13 +180,36 @@ function isThisAnEmail (string2){
   }
 */
 
+function rollTheDices(numero) {
+  const risultati = [];
+  let somma = 0;
+  for (let i = 0; i < numero; i++) {
+      const risultato = dice();
+      risultati.push(risultato);
+      somma += risultato;
+  }
+  return { sum: somma, values: risultati };
+}
+
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+
+function isTodayMyBirthday(){
+  const oggi = new Date();
+    const compleanno = new Date('1996-06-24'); 
+    return oggi.getMonth() === compleanno.getMonth() && oggi.getDate() === compleanno.getDate();
+}
+
+const oggi = isTodayMyBirthday()
+console.log(oggi)
+
 
 // Arrays & Oggetti
 
@@ -309,10 +346,16 @@ const movies = [
 */
 
 function newestMovie(movies){
+  let newest = movies[0];
+    for (let i = 1; i < movies.length; i++) {
+        if (movies[i].Year > newest.Year) {
+            newest = movies[i];
+        }
+    }
+    return newest;
 
 }
-
-// console.log(newestMovie(movies))
+console.log(newestMovie(movies))
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film 
@@ -394,7 +437,6 @@ console.log(searchAndDivide(movies, "Avengers"))
 
 function removeIndex(movies, string5){
   return movies.filter((_, i) => i !== string5);
-
 }
 
 console.log(removeIndex(movies, 2))
